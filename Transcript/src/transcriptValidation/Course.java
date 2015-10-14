@@ -1,6 +1,6 @@
 package transcriptValidation;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 
 
 
@@ -8,7 +8,7 @@ public class Course {
 	private String courseNum;
 	private Integer credits;
 	private String courseName;
-	ArrayList<Student> students = new ArrayList<Student>();
+	
 	
 	
 	public String getCourseNum() {

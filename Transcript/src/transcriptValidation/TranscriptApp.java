@@ -11,9 +11,12 @@ public class TranscriptApp {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		String choice = "y";
-		Course c = new Course();
+	
+
+
 		
-		ArrayList<Course> courses = new ArrayList<Course>();
+		ArrayList<Student> st = new ArrayList<Student>();
+		
 
 		
 
@@ -45,9 +48,9 @@ public class TranscriptApp {
 					"Enter the Students Letter Grade:");
 			newStudent.setGrade(grade);
 
-			newCourse.students.add(newStudent);
-			courses.add(newCourse);
+			newStudent.courses.add(newCourse);
 			
+			st.add(newStudent);
 
 
 			choice = Validator.getString(sc, "Another assignment? (y/n): ");
@@ -59,15 +62,16 @@ public class TranscriptApp {
 		System.out.println("CLASS\t\tCREDITS\t\tGRADE");
 		System.out.println("--------\t---------\t---------");
 		
-		for (int j = 0; j < courses.size(); j++) {
-			c = courses.get(j);
+		for (int j = 0; j < st.get(0).courses.size(); j++) {
+		
 			
-			System.out.println(c.getCourseName()+" "+c.getCourseNum()+"\t   "+c.getCredits()+"\t\t   "+c.students.get(0).getGrade());
+			System.out.println(st.get(0).courses.get(j).getCourseName()+" "+st.get(0).courses.get(j).getCourseNum()+"\t   "+st.get(0).courses.get(j).getCredits()+"\t\t   "+st.get(0).getGrade());
 		}
 		
 			
 			
 			}
+/*
 	public static double gpa(String grade){
 		switch(grade){
 		case "A":return 4.0;
@@ -76,14 +80,14 @@ public class TranscriptApp {
 		case "D":return 1.0;
 		case "F":return 0.0;
 		default:return 0.0;
+*/		
 		
-		}
 	
 		
 			
 		}
 	
-	}
+	
 
 		
 

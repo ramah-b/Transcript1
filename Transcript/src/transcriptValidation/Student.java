@@ -1,8 +1,12 @@
 package transcriptValidation;
 
+import java.util.ArrayList;
+
 public class Student {
 	private String student;
 	private String grade;
+	
+	public ArrayList<Course> courses = new ArrayList<Course>();
 	
 	public String getStudent() {
 		return student;
