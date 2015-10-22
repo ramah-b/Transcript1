@@ -11,9 +11,11 @@ public class TranscriptApp {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		String choice = "y";
-		Course c = new Course();
 		
-		ArrayList<Course> courses = new ArrayList<Course>();
+		Student newStudent = new Student();
+		StudentDB studentDB = new StudentDB();
+		Course newCourse = new Course();
+		
 
 		
 
@@ -23,12 +25,14 @@ public class TranscriptApp {
 		while (choice.equalsIgnoreCase("y")) {
 			
 
-			Course newCourse = new Course();
-			Student newStudent = new Student();
+			
+			
 
 			String student = Validator.getString(sc,
 					"Enter the Students Name: ");
 			newStudent.setStudent(student);
+			
+			studentDB.addStudent(newStudent);
 
 			// get the input from the user
 			String courseNum = Validator.getString(sc, "Enter your Course #: ");
@@ -43,10 +47,10 @@ public class TranscriptApp {
 
 			String grade = Validator.getString(sc,
 					"Enter the Students Letter Grade:");
-			newStudent.setGrade(grade);
+			newCourse.setGrade(grade);
 
-			newCourse.students.add(newStudent);
-			courses.add(newCourse);
+			newStudent.courses.add(newCourse);
+			
 			
 
 
@@ -68,29 +72,4 @@ public class TranscriptApp {
 			
 			
 			}
-	public static double gpa(String grade){
-		switch(grade){
-		case "A":return 4.0;
-		case "B":return 3.0;
-		case "C":return 2.0;
-		case "D":return 1.0;
-		case "F":return 0.0;
-		default:return 0.0;
-		
-		}
-	
-		
-			
-		}
-	
-	}
 
-		
-
-	
-
-
-
-
-// 
-			// System.out.println(c.getCourseNum());
