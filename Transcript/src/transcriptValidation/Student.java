@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Student {
 	private String student;
 	private double gpa;
+	private int studentid;
 	
 	ArrayList<Course> courses = new ArrayList<Course>();
 	
@@ -21,6 +22,9 @@ public class Student {
 		this.student = student;
 	}
 	
+	public void setCourses(Course course) {
+		this.courses.add(course);
+	}
 	
 	public double getGpa() {
 		return gpa;
@@ -38,6 +42,13 @@ public class Student {
 			gpa += courses.get(i).getCredits() * courses.get(i).getQualityPoints(courses.get(i).getGrade());
 		}
 		gpa = gpa / totalCredits;
+		this.setGpa(gpa);
 		return gpa;
+	}
+	public int getStudentid() {
+		return studentid;
+	}
+	public void setStudentid(int studentid) {
+		this.studentid = studentid;
 	}
 }
